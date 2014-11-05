@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Tracker Code Reviews",
+  "description": "Post commits from github to tracker in one click.",
+  "version": "1.0",
+
+  "permissions": [
+    "storage",
+    "activeTab",
+    "https://www.pivotaltracker.com/",
+    "https://github.com/*"
+  ],
+  "browser_action": {
+    // "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html" 
+    } 
+}
