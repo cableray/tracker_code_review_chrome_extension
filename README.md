@@ -4,7 +4,7 @@ Tracker Code Review Chrome extension
 Take a commit from a github page and generate a pivotal tracker story
 
 
-# Installing
+## Installing
 
 1. clone the repo
 2. go to chrome://extensions/
@@ -13,7 +13,7 @@ Take a commit from a github page and generate a pivotal tracker story
 5. click on the options link (next to the allow in incognito checkbox and the reload link)
 6. paste in your Tracker api key and click "Save Settings"
 
-# Usage
+## Usage
 
 The extension puts an icon next to the location bar (the generic puzzle piece). 
 Click this when viewing a github commit page and it will try to grab the commit information 
