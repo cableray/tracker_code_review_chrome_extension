@@ -2,12 +2,26 @@
 <head>
 <title>Tracker Code Review Extension Options</title>
 <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="jquery.serialize-object.min.js"></script>
 <script type="text/javascript" src="options.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="select2/select2.css">
+	<link rel="stylesheet" type="text/css" href="popup.css">
+
 </head>
 <body>
-
+<form id="settings">
 <label for="api_key">Api Key:</label><input name="api_key" />
+<label for="name_template">Name Template (ejs):</label><input name="name_template" value="commit <%=commit_title %> <%=commit_sha.slice(0,6)%>"/>
+<label for="description_template">Description Template (ejs):</label>
+<textarea name="description_template">
+commit <%=commit_sha%>
+<%=url%>
+
+Author(s): <%=author%>
+</textarea>
 <button id='save_settings'>Save Settings</button>
 <div id="status"></div>
+</form>
 </body>
 </html>

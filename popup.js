@@ -1,5 +1,5 @@
 $(function () {
-  chrome.storage.sync.get('api_key', function (settings) {
+  chrome.storage.sync.get(null, function (settings) {
     $.ajax('https://www.pivotaltracker.com/services/v5/projects',{
       headers: {
         'X-TrackerToken': settings.api_key
@@ -69,8 +69,8 @@ $(function () {
 
     chrome.runtime.onMessage.addListener(
       function(message, sender, sendResponse) {
-        $('[name=name]').val('commit '+message.commit_title+' '+message.commit_sha.slice(0,6));
-        $('[name=description]').val('commit '+message.commit_sha+'\n'+message.url+'\n\nAuthor(s): '+message.author)
+        $('[name=name]').val(_.template(settings.name_template, message));
+        $('[name=description]').val(_.template(settings.description_template, message));
       }
     );
 
